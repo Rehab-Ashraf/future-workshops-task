@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Backend/.vs
+/Backend/FutureWorkshops.Business/bin/Debug/net8.0
+/.vs
+/Backend/FutureWorkshops.Business/obj
+/Backend/FutureWorkshops.Domain/bin/Debug/net8.0
+/Backend/FutureWorkshops.Domain/obj
+/Backend/FutureWorkshops.Infrastructure/bin/Debug/net8.0
+/Backend/FutureWorkshops.Infrastructure/obj
+/Backend/FutureWorkshops.Shared/bin/Debug/net8.0
+/Backend/FutureWorkshops.Shared/obj
+/Backend/FutureWorkshops.WebAPI/.vs
+/Backend/FutureWorkshops.WebAPI/bin/Debug/net8.0
+/Backend/FutureWorkshops.WebAPI/Logs
+/Backend/FutureWorkshops.WebAPI/obj

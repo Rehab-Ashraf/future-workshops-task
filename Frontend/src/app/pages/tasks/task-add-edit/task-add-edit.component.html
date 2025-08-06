@@ -1,0 +1,34 @@
+<h2 mat-dialog-title class="text-lg font-semibold mb-2">
+  {{ data ? 'Edit' : 'Create' }} Task
+</h2>
+
+<form [formGroup]="workItemForm" (ngSubmit)="save()" class="space-y-4" mat-dialog-content>
+  <mat-form-field appearance="outline" class="w-full">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" placeholder="Enter task name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-full">
+    <mat-label>Due Date</mat-label>
+    <input matInput type="date" formControlName="dueDate" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-full">
+    <mat-label>
+      Status
+      <mat-icon matTooltip="Set the current progress of the task">info</mat-icon>
+    </mat-label>
+    <mat-select formControlName="status">
+      <mat-option *ngFor="let option of statusOptions" [value]="option.value">
+        {{ option.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-dialog-actions align="end" class="pt-2 space-x-2">
+    <button mat-stroked-button color="warn" type="button" (click)="cancel()">Cancel</button>
+    <button mat-flat-button color="primary" type="submit" [disabled]="workItemForm.invalid">
+      Save
+    </button>
+  </mat-dialog-actions>
+</form>
