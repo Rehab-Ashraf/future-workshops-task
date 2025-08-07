@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BehaviorSubject, combineLatest, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { ETaskStatus } from '../../../core/enum/ETaskStatus';
 import { WorkItemService } from '../../../core/services/WorkItemService';
-import { IWorkItem } from '../../../core/models/IWork-item';
+import { IWorkItem } from '../../../core/models/iWork-item';
 import { IPagination } from '../../../core/models/IPagination';
 import { DeleteComponent } from '../../../components/delete/delete.component';
 import { MatDialog } from '@angular/material/dialog';

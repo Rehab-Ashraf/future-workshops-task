@@ -60,14 +60,6 @@ namespace FutureWorkshops.WebAPI.Controllers
 			var result = await this._workItemService.UpdateAsync(model);
 			return result;
 		}
-		
-		[Route("activate-deavtivate/{id}")]
-		[HttpPatch]
-		public async Task<bool> ActivateOrDeavtivateAsync(int id)
-		{
-			var result = await this._workItemService.ActivateOrDeavtivateAsync(id);
-			return result;
-		}
 		#endregion
 
 		#region delete

@@ -12,7 +12,6 @@ namespace FutureWorkshops.Business.IServices
 		Task<WorkItemViewModel> GetAsync(int id);
 		Task<int> AddAsync(WorkItemViewModel model);
 		Task<int> UpdateAsync(WorkItemViewModel model);
-		Task<bool> ActivateOrDeavtivateAsync(int id);
 		Task<bool> DeleteAsync(int id);
 		#endregion
 	}

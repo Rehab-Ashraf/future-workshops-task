@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { AuthEndPoint } from "../api/Api.endpoint";
 import { Observable } from "rxjs";
-import { IWorkItem, IWorkItemsRes, IWorkItemsSearch } from "../models/IWork-item";
+import { IWorkItem, IWorkItemsRes, IWorkItemsSearch } from "../models/iWork-item";
 
 @Injectable({
     providedIn: 'root',

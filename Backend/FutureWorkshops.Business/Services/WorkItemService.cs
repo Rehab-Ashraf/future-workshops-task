@@ -36,8 +36,6 @@ namespace FutureWorkshops.Business.Services
 		{
 			var query = (await _WorkItemRepositoryAsync.GetAsync(conditionFilter: null)).Where(a => !a.IsDeleted);
 
-			int total =
-				query.Where(x => !x.IsDeleted).Count();
 
 			searchModel = searchModel == null ? new WorkItemSearchModel() : searchModel;
 
@@ -50,6 +48,7 @@ namespace FutureWorkshops.Business.Services
 				query = query.Where(i => i.Name.Contains(searchModel.Name));
 			}
 
+			query = query.OrderBy(a => a.DueDate);
 			searchModel.Pagination = await this._WorkItemRepositoryAsync.SetPaginationCountAsync(query, searchModel.Pagination);
 			query = await this._WorkItemRepositoryAsync.SetPaginationAsync(query, searchModel.Pagination);
 
@@ -92,15 +91,6 @@ namespace FutureWorkshops.Business.Services
 			await _unitOfWork.CommitAsync();
 
 			return entity.Id;
-		}
-		public async Task<bool> ActivateOrDeavtivateAsync(int id)
-		{
-			var query = await this._WorkItemRepositoryAsync.GetAsync(null);
-			var entity = query.Where(entity => entity.Id == id).FirstOrDefault();
- 
-			entity = await this._WorkItemRepositoryAsync.UpdateAsync(entity);
-			await _unitOfWork.CommitAsync();
-			return true;
 		}
 		#endregion
 
